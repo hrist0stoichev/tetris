@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.board {
+  outline: none;
+}
+
+.board-row {
+  height: 40px;
+}
+
+.square {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+}
+
+.square.active {
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.square.black {
+  background-color: black;
+}
+
+.square.red {
+  background-color: red;
+}
+
+.square.green {
+  background-color: green;
+}
+
+.square.blue {
+  background-color: blue;
+}
+
+.square.purple {
+  background-color: purple;
+}
+
+.square.yellow {
+  background-color: yellow;
+}
+
