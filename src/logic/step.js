@@ -21,14 +21,14 @@ const removeLines = state => {
   state.score += modifier;
 };
 
-module.exports = state => {
+module.exports = (state, props) => {
   if (state.running) {
     if (moveFigure(state, 0,1)) return state;
     removeLines(state);
     if (state.y < 0) state.running = false;
     selectFigure(state);
   } else {
-    state = getInitialState(15,10);
+    state = getInitialState(props.height, props.width);
   }
   return state;
 };

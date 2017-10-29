@@ -17,7 +17,7 @@ class App extends Component {
   }
   componentDidMount() {
     const step = () =>{
-      this.setState(tetris.step(this.state));
+      this.setState(tetris.step(this.state, this.props));
       setTimeout(step.bind(this), this.state.speed);
     };
     step.call(this);
@@ -43,7 +43,7 @@ class App extends Component {
     _.set(this, 'state.running', false);
   }
   render () {
-    const rows = this.state.board.map(function(row, i) {
+    const rows = this.state.board.map((row, i) => {
       return CanvasRow({ key: i, row: row });
     });
     return (
@@ -59,7 +59,7 @@ class App extends Component {
   }
 }
 App.defaultProps = {
-  height: 15,
+  height: 16,
   width: 10
 };
 App.propTypes = {
