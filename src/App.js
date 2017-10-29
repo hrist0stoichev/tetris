@@ -24,8 +24,6 @@ class App extends Component {
     ReactDOM.findDOMNode(this).focus();
   }
   _handleKey(event) {
-    console.log(event)
-    console.log(this)
     event.preventDefault();
     const actionMap = {
       'ArrowUp': tetris.rotate,

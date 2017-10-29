@@ -1,5 +1,4 @@
 const FIGURES = require('./figures.js');
-const getNextFigure = require('./get-next-figure.js');
 
 const allEmpty = arr => {
   return !arr.some(val => {
@@ -9,7 +8,7 @@ const allEmpty = arr => {
 
 const selectFigure = state => {
   state.figure = FIGURES[state.nextFigure];
-  state.nextFigure = getNextFigure();
+  state.nextFigure = (Math.random()*FIGURES.length)|0;
   for (let i = 0; i < state.figure.length; i++) {
     for (let j = 0; j < state.figure.length; j++) {
       state.figure[i][j] = state.figure[i][j] && state.nextColor;

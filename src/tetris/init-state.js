@@ -1,12 +1,12 @@
 const selectFigure = require('./utils/select-figure.js');
-const getNextFigure = require('./utils/get-next-figure.js');
+const FIGURES = require('./utils/figures.js');
 
 module.exports = function(height, width) {
   const state = {
     board: initBoard(height, width),
     running: true,
     score: 0,
-    nextFigure: getNextFigure(),
+    nextFigure: (Math.random()*FIGURES.length)|0,
     nextColor: 1,
     x: 0,
     y: 0,
