@@ -1,5 +1,6 @@
 const selectFigure = require('./utils/select-figure.js');
 const moveFigure = require('./utils/move-figure.js');
+const getInitialState = require('./initial-state');
 
 const hasEmpty = arr => {
   return arr.some(val => {return !val;});
@@ -26,6 +27,8 @@ module.exports = state => {
     removeLines(state);
     if (state.y < 0) state.running = false;
     selectFigure(state);
+  } else {
+    state = getInitialState(18,10);
   }
   return state;
 };

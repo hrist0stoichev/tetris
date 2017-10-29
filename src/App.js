@@ -1,7 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const CanvasRow = require('./CanvasRow');
-const tetris = require('./tetris');
+const tetris = require('./logic');
 const PropTypes = require('prop-types');
 const _ = require('lodash');
 
@@ -27,9 +27,9 @@ class App extends Component {
     event.preventDefault();
     const actionMap = {
       'ArrowUp': tetris.rotate,
-      'ArrowDown': tetris.moveDown,
-      'ArrowLeft': tetris.moveLeft,
-      'ArrowRight': tetris.moveRight,
+      'ArrowDown': tetris.movements.down,
+      'ArrowLeft': tetris.movements.left,
+      'ArrowRight': tetris.movements.right,
       ' ': tetris.drop
     };
     if (event.key in actionMap) {
@@ -60,7 +60,7 @@ class App extends Component {
   }
 }
 App.defaultProps = {
-  height: 15,
+  height: 18,
   width: 10
 };
 App.propTypes = {
