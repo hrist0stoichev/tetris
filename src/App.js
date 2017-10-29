@@ -46,21 +46,20 @@ class App extends Component {
     const rows = this.state.board.map(function(row, i) {
       return CanvasRow({ key: i, row: row });
     });
-    return React.createElement('div', {
-      ref: 'board',
-      className: 'board',
-      tabIndex: 0,
-      onKeyDown: event => {
-        this._handleKey.bind(event, this);
-        this._handleKey(event);
-      },
-      onFocus: this._onFocus,
-      onBlur: this._onBlur
-    }, rows);
+    return (
+      <div ref={"board"} className="board" tabIndex={0}
+         onKeyDown={event => {
+          this._handleKey.bind(event, this);
+          this._handleKey(event);
+        }} onFocus={this._onFocus} onBlur={this._onBlur}>
+        <h1>SCORE: {this.state.score}</h1>
+        {rows}
+      </div>
+    );
   }
 }
 App.defaultProps = {
-  height: 18,
+  height: 15,
   width: 10
 };
 App.propTypes = {

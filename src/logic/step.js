@@ -28,7 +28,7 @@ module.exports = state => {
     if (state.y < 0) state.running = false;
     selectFigure(state);
   } else {
-    state = getInitialState(18,10);
+    state = getInitialState(15,10);
   }
   return state;
 };
